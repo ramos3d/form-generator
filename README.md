@@ -8,6 +8,7 @@ All you need to do is follow these steps below:
 
 * Open connection.php file and update it with your database informations
 * Start the index.php and fill out the form with your table name and path information, which is the place where your form will be saved. Remember, if you do not choose a path, your form will be saved into formCreated folder as default.
+* It's very important to insert into your table comment area the label you wish it appear on the form. If you don't do that, your form will be generated without field labels. 
 
 # Features
 This form uses:
