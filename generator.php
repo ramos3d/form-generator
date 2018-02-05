@@ -58,7 +58,6 @@ class Generate{
                 <button type=\"button\" class=\"btn btn-warning pull-right btn-space\">Update</button>
                 <button type=\"button\" class=\"btn btn-success pull-right btn-space\">Save Register</button>
             </div>
-
     </body>
 </html>");
     }
