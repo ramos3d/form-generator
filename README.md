@@ -1,4 +1,4 @@
-# Form Ggenerator v1.0
+# Form Generator v1.0
 
 The Form Generator project is a very simple way to help programmers who need create HTML forms from their databe. Though this is a short project, I intend to provide script/stardadization improvements according to the time.
 
@@ -15,4 +15,6 @@ This form uses:
 * Bootstrap3
 
 Feel free to use it and, if it's possible, let me know where and how you are using it!
+
+www.ramos3d.com
 
