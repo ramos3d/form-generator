@@ -40,6 +40,7 @@ class Generate{
         }
         .form {
             padding: 2%;
+            margin-top:2%;
             background-color: #e6e6e6;
             box-shadow: 1px 2px 2px;
         }
@@ -64,10 +65,7 @@ class Generate{
                     </div>
                 </form>
             </div>
-<<<<<<< HEAD
         </div>
-=======
->>>>>>> 9bfd5f9864721711d47c621bf807965a65f957f4
     </body>
 </html>");
     }
