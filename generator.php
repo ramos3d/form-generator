@@ -4,7 +4,6 @@ class Generate{
         error_reporting(0);
         include ("connection.php");
         if (!$path){$path="formCreated";}
-        $type = "SELECT * from $table LIMIT 1";
         $query = "SELECT column_comment FROM information_schema.columns WHERE table_name =\"$table\"";
         # Catching Comments to add them as Form labels
         if ($result = $Mysqli->query($query)) {
@@ -65,7 +64,10 @@ class Generate{
                     </div>
                 </form>
             </div>
+<<<<<<< HEAD
         </div>
+=======
+>>>>>>> 9bfd5f9864721711d47c621bf807965a65f957f4
     </body>
 </html>");
     }
