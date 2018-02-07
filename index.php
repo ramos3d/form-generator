@@ -38,7 +38,7 @@
                         </div>
                         <div class="form-group col-xs-4">
                             <label>Path:</label>
-                    		<input type="text" class="form-control"  name="path" placeholder="Default is 'formCreated' fold">
+                    		<input type="text" class="form-control"  name="path" placeholder=/formCreated">
                             (Place where your form will be generated)
                         </div>
                     </div>
