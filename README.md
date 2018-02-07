@@ -12,7 +12,7 @@ All you need to do is follow these steps below:
 
 # Features
 This form uses:
-* Font Awesome - Access https://fontawesome.com/icons/ for further informations about how to use it properly.
+* Font Awesome - access https://fontawesome.com/icons/ for further informations about how to use it properly.
 * Bootstrap 3  
 
 Feel free to use it and, if it's possible, let me know where and how you are using it!
