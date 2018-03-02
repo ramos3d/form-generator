@@ -11,11 +11,13 @@ All you need to do is follow these steps below:
 * It's very important to insert into your table comment area the label you wish it appear on the form. If you don't do that, your form will be generated without field labels. 
 
 # Features
-This form uses:
+This project uses:
 * Font Awesome - access https://fontawesome.com/icons/ for further informations about how to use it properly.
-* Bootstrap 3  
+* Bootstrap 3
+* JQuey v.3.3.1
 
 Feel free to use it and, if it's possible, let me know where and how you are using it!
+Feedbacks and suggestions also are always welcome!
 
 www.ramos3d.com
 
