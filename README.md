@@ -15,6 +15,7 @@ This project uses:
 * Font Awesome - access https://fontawesome.com/icons/ for further informations about how to use it properly.
 * Bootstrap 3
 * JQuey v.3.3.1
+* PHP & MySQL
 
 Feel free to use it and, if it's possible, let me know where and how you are using it!
 Feedbacks and suggestions also are always welcome!
