@@ -1,0 +1,11 @@
+.btn-space {
+    margin-left: 1%;
+    }
+    .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #CEE3F6;
+    text-align: center;
+    }
