@@ -1,3 +1,6 @@
+[![Stories in Ready](https://badge.waffle.io/PHPAuth/PHPAuth.png?label=ready&title=Ready)](https://waffle.io/PHPAuth/PHPAuth)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg?style=flat-circle)](https://php.net/)
+
 # Form Generator v1.0
 
 The Form Generator project is a very simple way to help programmers who need create HTML forms from their databe. Though this is a short project, I intend to provide script/stardadization improvements according to the time.
