@@ -4,6 +4,12 @@
 
 The Form Generator project is a very simple way to help programmers who need create HTML forms from any specific table. Though this is a short project.
 
+
+
+![Image description](https://ramos3d.com/img/formGenerator.png)
+
+
+
 # How to use it?
  1. Set your database connetion in /config/Connection.php
  2. open index.php
