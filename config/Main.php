@@ -54,34 +54,35 @@ class Main extends Connection
                 $fields = array_unique($fields);
                 $fieldLabels = array_unique($fieldLabels);
 
-                foreach ($fields as $key=>$field) {
-                    if ($fieldLabels[$key] == '') {
-                        $fieldLabels[$key] = ' No Label';
-                    }
-                    $labels [$key] = "$key. ". $fieldLabels[$key];
-                    // Setting types
-                    if ($fieldTypes[$key] == '' or !isset($fieldTypes[$key])  or $fieldTypes[$key] == NULL)  {
-                        $fieldTypes[$key] = 'varchar';
-                    }
-                    $types [$key] = $fieldTypes[$key];
-                }
+                // Reindexing arrays
+                $fieldLabels = array_values(array_filter($fieldLabels));
+                $fields = array_values(array_filter($fields));
+                $fieldTypes = array_values(array_filter($fieldTypes));
+
                 // Prepare the columns
                 $tab = "  ";
                 $form = '';
-                foreach ($fields as $key=>$fieldName) {
-                    if(strpos($types[$key], 'varchar') !== false){
+                foreach ($fieldLabels as $key => $label) {
+
+                    if(strpos($fieldTypes[$key], 'varchar') !== false){
                         $type = 'text';
                     }
-                    if(strpos($types[$key], 'date') !== false){
+                    if(strpos($fieldTypes[$key], 'date') !== false){
                         $type = 'date';
                     }
-                    if(strpos($types[$key], 'int') !== false){
+                    if(strpos($fieldTypes[$key], 'int') !== false){
                         $type = 'number';
+                    }
+                    if(strpos($label, 'Email') !== false){
+                        $type = 'email';
+                    }
+                    if(strpos($label, 'Password') !== false){
+                        $type = 'password';
                     }
                     $form .= "
                     <div class=\"col-md-$column mb-2\">
-                    $tab <label for=\"$fieldName\">$labels[$key]</label>
-                    $tab <input type=\"$type\" name=\"$fieldName\" id=\"id-$fieldName\" class=\"form-control\">
+                    $tab <label for=\"$fields\">$label</label>
+                    $tab <input type=\"$type\" name=\"$fields\" id=\"id-$fields\" class=\"form-control\">
                     </div>
                     ";
                 }
