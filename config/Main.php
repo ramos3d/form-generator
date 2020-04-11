@@ -5,8 +5,8 @@
 *    / _\/ _ \| '__| '_ ` _ \   / /_\/ _ \ '_ \ / _ \ '__/ _` | __/ _ \| '__|
 *   / / | (_) | |  | | | | | | / /_\\  __/ | | |  __/ | | (_| | || (_) | |
 *   \/   \___/|_|  |_| |_| |_| \____/\___|_| |_|\___|_|  \__,_|\__\___/|_|
-* @author Marcelo Ramos Soares <ramos3d.com>
-* v.1.0 - 2020-04-10
+*   @author Marcelo Ramos Soares <ramos3d.com>
+*   v.1.0 - 2020-04-10
 */
 
 require_once "Connection.php";
@@ -33,7 +33,7 @@ class Main extends Connection
 
     /**
     * Generate the form html
-    * @var array
+    * @return array
     */
     public function generate(){
         if ($_POST['table_list'] !='') {
@@ -42,34 +42,49 @@ class Main extends Connection
             $sql = sprintf("SELECT column_name, column_type, column_comment from information_schema.columns WHERE table_name ='$table' ");
             try {
                 $query = $this->db->connect()->query($sql);
-                while ($name = $query->fetch_array()) {
-                    $name[2] = ($name[2]) ? $name[2] : 'x. Question:' ;
-                    $tables [] = $name[0] . " | ". $name[1]. " | ". $name[2];
+                while ($name = $query->fetch_assoc()) {
+                    if ($name['column_type'] == '') {
+                        $name['column_type'] = 'none';
+                    }
+                    $fields []  = $name['column_name'];
+                    $fieldTypes[]= $name['column_type'];
+                    $fieldLabels[]= $name['column_comment'];
+                }
+                $fields = array_unique($fields);
+                $fieldLabels = array_unique($fieldLabels);
+
+                foreach ($fields as $key=>$field) {
+                    if ($fieldLabels[$key] == '') {
+                        $fieldLabels[$key] = ' No Label';
+                    }
+                    $labels [$key] = "$key. ". $fieldLabels[$key];
+                    // Setting types
+                    if ($fieldTypes[$key] == '' or !isset($fieldTypes[$key])  or $fieldTypes[$key] == NULL)  {
+                        $fieldTypes[$key] = 'varchar';
+                    }
+                    $types [$key] = $fieldTypes[$key];
                 }
                 // Prepare the columns
                 $tab = "  ";
                 $form = '';
-                foreach ($tables as $key => $value) {
-                    $array = explode("|", $value);
-                    $name = $array[0];
-                    $label = $array[2];
-                    if(strpos($value, 'varchar') !== false){
+                foreach ($fields as $key=>$fieldName) {
+                    if(strpos($types[$key], 'varchar') !== false){
                         $type = 'text';
                     }
-                    if(strpos($value, 'date') !== false){
+                    if(strpos($types[$key], 'date') !== false){
                         $type = 'date';
                     }
-                    if(strpos($value, 'int') !== false){
+                    if(strpos($types[$key], 'int') !== false){
                         $type = 'number';
                     }
-
                     $form .= "
-                    <div class=\"col-md-$column mb-2\"> \n
-                    $tab <label for=\"$name\">$label</label> \n
-                    $tab <input type=\"$type\" name=\"$name\" id=\"id-$name\" class=\"form-control\"> \n
+                    <div class=\"col-md-$column mb-2\">
+                    $tab <label for=\"$fieldName\">$labels[$key]</label>
+                    $tab <input type=\"$type\" name=\"$fieldName\" id=\"id-$fieldName\" class=\"form-control\">
                     </div>
                     ";
                 }
+
                 $time = date('Y-m-d H:m:i');
                 @$file = fopen("forms_generated/form-$table-$time.html", "w");
                 if ($file === false) {
