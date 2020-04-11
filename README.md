@@ -4,7 +4,7 @@
 Form Generator is the best option for those who need to create huge HTML forms using Bootstrap 4. If this is the case, this application is for you.
 
 
-![Image description](https://ramos3d.com/img/formGenerator.png)
+![Image description](https://ramos3d.com/img/formGenerator2.png)
 
 
 # Highlights
