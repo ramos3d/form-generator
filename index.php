@@ -11,7 +11,11 @@
 
 require_once("config/Main.php");
 $model = new Main;
-$tables = $model->getTables();
+$tables ='';
+if (!isset($_GET['welcome'])) {
+    $tables = $model->getTables();
+}
+
 if ($tables ==''){
     $msg = 'No table has been found. <br> Is there really a table in this database?';
 }
@@ -47,6 +51,14 @@ if ($_POST) {
         </div>
         <div class="row">
             <div class="col-md-12 mt-2">
+                <?php if ($_GET['welcome']): ?>
+                    <div class="alert alert-info mt-3 alert-dismissible fade show" role="alert">
+                        <?php echo $_GET['welcome']; ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <?php endif; ?>
                 <div class="card">
                     <div class="card-header"style="background:#ffe7c0">
                         Table Manager
@@ -93,16 +105,14 @@ if ($_POST) {
                                             <?php endforeach; ?>
                                         <?php endif; ?>
                                     </select>
-                                    <?php if (isset($msg)): ?>
-                                        <div class="alert alert-info mt-3 alert-dismissible fade show" role="alert">
+                                    <?php if (isset($msg) && !isset($_GET['welcome'])): ?>
+                                        <div class="alert alert-danger mt-3 alert-dismissible fade show" role="alert">
                                             <?php echo $msg; ?>
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                     <?php endif; ?>
-
-
 
                                     <div class="mt-3">
                                         <label for="columns">How Many columns?</label><br>
@@ -118,7 +128,9 @@ if ($_POST) {
                                         <small> | <span class="text-danger"> 4 = 'col-md-3'</span></small>
                                     </div>
                                     <hr>
-                                    <p>Output Path <span class="text-info">/forms_generated</span> </p>
+                                    <label for="path">Output:</label>
+                                    <input type="text" name="path" placeholder="/forms_generated" class="form-control sub">
+                                    <p><small>Default output Path <span class="text-info">/forms_generated</span> </small></p>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="text-center mt-3">
