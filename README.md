@@ -9,7 +9,7 @@ Form Generator is the best option for those who need to create huge HTML forms u
 
 # Highlights
 
-The HTML pages are generated automatically using your tables as source. Then, all you need to do is basically set the connection file with your database access data, pick up a table and it is done. Fast, clean and easy.
+The HTML pages are generated automatically using your tables as source. Then, all you need to do is basically set up the connection file with your database access data, pick up a table and it is done. Fast, clean and easy.
 * PHP >=5.6
 * Bootstrap 4
 
