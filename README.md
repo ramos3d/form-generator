@@ -1,12 +1,18 @@
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg?style=flat-circle)](https://php.net/)
 
 # Form Generator v2.0
-
-The Form Generator project is a very simple way to help programmers who need create HTML forms from any specific table. Though this is a short project.
-
+Form Generator is the best option for those who need to create huge HTML forms using Bootstrap 4. If this is the case, this application is for you.
 
 
 ![Image description](https://ramos3d.com/img/formGenerator.png)
+
+
+# Highlights
+
+The HTML pages are generated automatically using your tables as source. Then, all you need to do is basically set the connection file with your database access data, pick up a table and it is done. Fast, clean and easy.
+* PHP >=5.6
+* Bootstrap 4
+
 
 
 
