@@ -39,6 +39,7 @@ class Main extends Connection
         if ($_POST['table_list'] !='') {
             $table = $_POST['table_list'];
             $column = $_POST['column'];
+            $path = $_POST['path'];
             $sql = sprintf("SELECT column_name, column_type, column_comment from information_schema.columns WHERE table_name ='$table' ");
             try {
                 $query = $this->db->connect()->query($sql);
@@ -86,7 +87,12 @@ class Main extends Connection
                 }
 
                 $time = date('Y-m-d H:m:i');
-                @$file = fopen("forms_generated/form-$table-$time.html", "w");
+                // setting path
+                if ($path =='') {
+                    $path = "forms_generated";
+                }
+                $url ="$path/form-$table-$time.html";
+                @$file = fopen("$url", "w");
                 if ($file === false) {
                     $msg = "Please, verify if the folder has right permission to write";
                     return $_GET['error'] = $msg;
@@ -95,7 +101,7 @@ class Main extends Connection
                 $footer = $this->getfooter();
                 $completeForm = $header . $form . $footer ;
                 fwrite($file, $completeForm);
-                $msg = "Form Generated Successfully";
+                $msg = "Form Generated Successfully. Go to: <a href='".$url."' target='_blank'>$url</a>";
                 return $_GET['success'] = $msg;
             } catch (Exception $e) {
                 return $e->getMessage();
