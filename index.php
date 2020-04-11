@@ -5,8 +5,8 @@
 *    / _\/ _ \| '__| '_ ` _ \   / /_\/ _ \ '_ \ / _ \ '__/ _` | __/ _ \| '__|
 *   / / | (_) | |  | | | | | | / /_\\  __/ | | |  __/ | | (_| | || (_) | |
 *   \/   \___/|_|  |_| |_| |_| \____/\___|_| |_|\___|_|  \__,_|\__\___/|_|
-* @author Marcelo Ramos Soares <ramos3d.com>
-* v.1.0 - 2020-04-10
+*   @author Marcelo Ramos Soares <ramos3d.com>
+*   v.1.0 - 2020-04-10
 */
 
 require_once("config/Main.php");
@@ -59,7 +59,7 @@ if ($_POST) {
                                 <ul>
                                     <li>1. Set your database connetion in <span class="text-info">/config/Connection.php</span> </li>
                                     <li>2. Reload this page</li>
-                                    <li>3. Select your table on the side</li>
+                                    <li>3. Select your table on the right side</li>
                                     <li>4. Enjoy :) </li>
                                 </ul>
                                 <hr>
@@ -67,7 +67,7 @@ if ($_POST) {
                                 <p> This system will add as Input Label all respective comments existing in your table.</p>
                             </div>
                             <div class="col-md-6">
-                                <h5 class="card-title">Selct your table</h5>
+                                <h5 class="card-title">Select your table</h5>
                                 <?php if ($_GET['success']): ?>
                                     <div class="alert alert-success mt-3 alert-dismissible fade show" role="alert">
                                         <?php echo $_GET['success']; ?>
@@ -104,18 +104,18 @@ if ($_POST) {
 
 
 
-                                    <div class="mt-2">
-                                        <label for="columns">How Many coluns?</label><br>
+                                    <div class="mt-3">
+                                        <label for="columns">How Many columns?</label><br>
+                                        <select class="form-control" name="column">
+                                            <option value="12">1 column</option>
+                                            <option value="6">2 columns</option>
+                                            <option value="4">3 columns</option>
+                                            <option value="3">4 columns</option>
+                                        </select>
                                         <small>Example: <span class="text-success"> 1 = 'col-md-12'</span></small>
                                         <small> | <span class="text-info"> 2 = 'col-md-6'</span></small>
                                         <small> | <span class="text-warning"> 3 = 'col-md-4'</span></small>
                                         <small> | <span class="text-danger"> 4 = 'col-md-3'</span></small>
-                                        <select class="form-control mt-2" name="column">
-                                            <option value="12">1</option>
-                                            <option value="6">2</option>
-                                            <option value="4">3</option>
-                                            <option value="3">4</option>
-                                        </select>
                                     </div>
                                     <hr>
                                     <p>Output Path <span class="text-info">/forms_generated</span> </p>
@@ -129,7 +129,6 @@ if ($_POST) {
                                 </form>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
