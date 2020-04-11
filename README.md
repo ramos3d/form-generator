@@ -16,6 +16,12 @@ The Form Generator project is a very simple way to help programmers who need cre
  3. Select your table on the right side
  4. Enjoy :)
 
+
+# Important
+## Did you get an Enpty HTML output?
+Whenever a column has no comments it will not be possible to create the html labels properly. 
+Then, no comments, no fields.
+
 Feel free to use it and, if it's possible, let me know where and how you are using it!
 Feedbacks and suggestions also are always welcome!
 
