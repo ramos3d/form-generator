@@ -24,9 +24,9 @@ The HTML pages are generated automatically using your tables as source. Then, al
 
 
 # Important
-## Did you get an Enpty HTML output?
-Whenever a column has no comments it will not be possible to create the html labels properly. 
-Then, no comments, no fields.
+## Did you get an Empty HTML output?
+Whenever a column has no comments the HTML labels won't be created properly. 
+So, no comments, no fields.
 
 Feel free to use it and, if it's possible, let me know where and how you are using it!
 Feedbacks and suggestions also are always welcome!
