@@ -17,7 +17,7 @@ The HTML pages are generated automatically using your tables as source. Then, al
 
 
 # How to use it?
- 1. Set your database connetion in /config/Connection.php
+ 1. Set your database connetion in **/config/Connection.php**
  2. open index.php
  3. Select your table on the right side
  4. Enjoy :)
